@@ -7,16 +7,16 @@ import Navbar from './../components/navbar'
 import Header from '../components/header'
 import './index.css'
 
+
 const Layout = ({ children, data }) => (
   <div>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
+        { name: 'description', content: data.site.siteMetadata.title },
       ]}
     />
-    <Header siteTitle={data.site.siteMetadata.title} />
+    <Header data={data} />
     <Navbar />
     <div
       style={{
@@ -38,11 +38,20 @@ Layout.propTypes = {
 export default Layout
 
 export const query = graphql`
-  query SiteTitleQuery {
-    site {
-      siteMetadata {
-        title
-      }
+  query SiteTitleQuery{
+  site {
+    siteMetadata {
+      title
+      desc
     }
   }
+  background: imageSharp(id: { regex: "/bg.jpeg/" }) {
+    sizes(
+      maxWidth: 1240
+      duotone: { highlight: "#f00e2e", shadow: "#192550" }
+    ) {
+      ...GatsbyImageSharpSizes
+    }
+  }
+}
 `

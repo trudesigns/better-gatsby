@@ -1,13 +1,33 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import styled from 'styled-components'
 
+const MainNav = styled.nav`
+  ul {
+    list-style: none;
+    display: flex;
+
+    li {
+        margin-left: 10px;
+        a {
+            text-decoration: none;
+            color: #fff;
+            &:hover {
+                border-bottom: 3px solid red;
+            }
+        }
+    }
+  }
+`
 const Navbar = () => {
     return (
-        <nav>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-        </nav>
+        <MainNav>
+            <ul>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
+            </ul>
+        </MainNav>
     )
 }
 
