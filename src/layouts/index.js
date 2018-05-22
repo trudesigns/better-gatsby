@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import './gatstrap.scss'
 
 import Navbar from './../components/navbar'
 
@@ -13,7 +14,7 @@ const Layout = ({ children, data }) => (
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
-        { name: 'description', content: data.site.siteMetadata.title },
+        { name: 'description great stuff type shit in here for SEO', content: data.site.siteMetadata.title },
       ]}
     />
     <Header data={data} />

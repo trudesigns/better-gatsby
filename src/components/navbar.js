@@ -20,15 +20,22 @@ const MainNav = styled.nav`
   }
 `
 const Navbar = () => {
-    return (
-        <MainNav>
-            <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
-            </ul>
-        </MainNav>
-    )
+    return <MainNav>
+        <ul>
+          <li>
+            <Link className= "btn" to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/singers">Singers</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+        </ul>
+      </MainNav>
 }
 
 export default Navbar
